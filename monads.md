@@ -1,14 +1,13 @@
-
 Monads For The Terrified
 ========================
 
 What Is This Craziness?!?
 -------------------------
 
-People learning Haskell generally seem to get tripped up about monads. There's good reasons for this. 
+People learning Haskell generally seem to get tripped up about monads. There are good reasons for this. 
 
  1. Monads are, really, needed to write a serious Haskell program. As a consequence, people generally try to learn them fairly shortly after beginning to use Haskell.
- 2. Monads are defined in Haskell and it is a very short definition. As such, it is very tempting to not just teach someone how to use monads but to also try to teach them the underpinning definition. The definition involves a bunch of rather advanced Haskell. In combination with (1), this is a big problem.
+ 2. Monads are defined in Haskell and have a very short definition. As such, it is very tempting to not just teach someone how to use monads, but to also try to teach them the underlying definition. The definition involves a bunch of rather advanced Haskell. In combination with (1), this is a big problem.
  3. Monads are a very abstract idea. I'm not really sure that the motivation can be properly grasped by anything other than using them.
  4. Monads are generally interweaved with the idea of an IO object.
 
@@ -110,7 +109,7 @@ So, we define Maybe. Like a list, Maybe's wrap around a type -- for example, if 
 
 A Maybe value can be a `Nothing`, corresponding to an empty list `[]`, or a `Just a`, corresponding to a singleton list `[a]`.
 
-We could even define a function transforming a maye value into a list:
+We could even define a function transforming a maybe value into a list:
 
 ```haksell
 maybeToList :: Maybe a -> [a]
@@ -118,7 +117,7 @@ maybeToList Nothing  = []
 maybeToList (Just a) = [a]
 ```
 
-In do blocks, `Mabye`s behave just like their corresponding lists.
+In do blocks, `Maybe`s behave just like their corresponding lists.
 
 ```haskell
 do
@@ -140,7 +139,7 @@ IO Objects
 
 When I explain to people that Haskell is a purely functional language, that functions have no side effects, there's a minute before the penny drops. Then they start wondering: how do you do IO?
 
-Then answer they get is usually one word: monads. I think this is a large part of the reason that people find monads so intimidating -- "What Dark Magic they must be, to circumvent purity like that!". As an answer, it's also a little bit ecenomical with the truth. You don't *need* monad's to do IO in haskell. You need IO objects. Monads are just really useful for building IO objects!
+Then answer they get is usually one word: monads. I think this is a large part of the reason that people find monads so intimidating -- "What Dark Magic they must be, to circumvent purity like that!". As an answer, it's also a little bit economical with the truth. You don't *need* monads to do IO in Haskell. You need IO objects. Monads are just really useful for building IO objects!
 
 In a lot of languages, like C, the program beings execution at a `main` function and calls other things from there. Haskell programs also declare a `main` object, but it's not a function! It's an IO object.
 
@@ -161,7 +160,7 @@ main = sayHi
 
 Now, you ask, why is it `IO ()` and not just `IO`? The answer is that an IO object can be something that, if it is ever run, will give us something. For example, `getLine` is an `IO String` -- if it is ever run, it gives back a string! But what about things like `putStrLn` that don't give anything back? We say they give back the empty tuple `()` or, in other words, nothing.
 
-So, at this point it makes sense that we *can* do IO. The question becomes, how do we do *complicated* IO. Obviously, we need a way to build more complicated IO objects! As you've probably guessed, IO objects are monads and we're going to use do blocks to build complicated ones!
+So, at this point it makes sense that we *can* do IO. The question becomes, how do we do *complicated* IO? Obviously, we need a way to build more complicated IO objects! As you've probably guessed, IO objects are monads and we're going to use do blocks to build complicated ones!
 
 ```haskell
 do                                             -- An object that, if ever run, will:
@@ -247,7 +246,7 @@ do
 	return [a', b', c', d'...]
 ```
 
-Also useful is `sequence_`, for example `sequence_ [a, b, c, d...]` is equivelant to:
+Also useful is `sequence_`, for example `sequence_ [a, b, c, d...]` is equivalent to:
 
 ```haskell
 do
