@@ -1,15 +1,15 @@
 
-Monads For People Who Want to Get Coding
-=========================================
+Monads For The Terrified
+========================
 
-What Is That Crazy Colah Doing?
----------------------------------
+What Is This Craziness?!?
+-------------------------
 
 People learning Haskell generally seem to get tripped up about monads. There's good reasons for this. 
 
  1. Monads are, really, needed to write a serious Haskell program. As a consequence, people generally try to learn them fairly shortly after beginning to use Haskell.
  2. Monads are defined in Haskell and it is a very short definition. As such, it is very tempting to not just teach someone how to use monads but to also try to teach them the underpinning definition. The definition involves a bunch of rather advanced Haskell. In combination with (1), this is a big problem.
- 3. Monads are an a very abstract idea. I'm not really sure that the motivation can be properly grasped by anything other than using them.
+ 3. Monads are a very abstract idea. I'm not really sure that the motivation can be properly grasped by anything other than using them.
  4. Monads are generally interweaved with the idea of an IO object.
 
 This introduction attempts to avoid some of these problems. In particular, it is only going to teach you *how to use monads* and not *what they are*. This avoids (2) and, to a lesser extent, (3). 
@@ -81,7 +81,7 @@ OK, So What About Monads?
 
 Well, that's a do block. A monad is something that wraps around a type and can be used to build do blocks.
 
-Not a very satnisfying answer? After all, you ask, *what does a do block actually mean*? What does it mean that we can make a do block?
+Not a very satisfying answer? After all, you ask, *what does a do block actually mean*? What does it mean that we can make a do block?
 
 ... Ah, that we can make a do block? You see, being a monad is really just that we've told Haskell what do blocks mean for our monad. **We could have defined the behaviour however we wanted, as long as it created coherent do blocks!**
 
@@ -213,15 +213,69 @@ do
 
 If possible, ignore them for now.
 
-If not, think of them as short hands for things you often want to do in do blocks:
+If not, think of them as short hands for things you often want to do in do blocks.
+
+`a >> b` is the same thing as
 
 ```haskell
-
-a >> b = do
+do
 	a
 	b
+```
 
-a >>= b = do
+And `a >>= b` is the same as
+
+```haskell
+do
 	aval <- a
 	b aval
 ```
+
+**Anything else?**
+
+Yes. Familiarize yourself with the Monad library, `Control.Monad`. It contains all sorts of goodies! I'll be going through some personal favourites, but you should look through the documentation!
+
+`sequence [a, b, c, d...]` is the same thing as
+
+```haskell
+do
+	a' <- a
+	b' <- b
+	c' <- c
+	d' <- d
+	...
+	return [a', b', c', d'...]
+```
+
+Also useful is `sequence_`, for example `sequence_ [a, b, c, d...]` is equivelant to:
+
+```haskell
+do
+	a' <- a
+	b' <- b
+	c' <- c
+	d' <- d
+	...
+	return ()
+```
+
+A classic example of using this would be something like `sequence_ $ map putStrLn $ ["abc", "def", "boo!"]` which would result, if run, in the output:
+
+```
+abc
+def
+boo!
+```
+
+Another favourite is `forM_`. It is best demonstrated by an example:
+
+```haskell
+forM_ [1,2.. 30] $ \n -> do
+	putStrLn $ "n = " ++ show n
+	when (n < 10) $
+		putStrLn "Also, n is lower than 10!!"
+```
+
+Which does exactly what you think!
+
+I'll leave the rest for you to discover by yourself.
