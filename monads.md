@@ -1,13 +1,10 @@
 Monads For The Terrified
 ========================
 
-What Is This Craziness?!?
--------------------------
-
-(You can ignore this section.)
+What Is This Craziness?!? (The Section You Can Ignore)
+-------------------------------------------------------
 
 People learning Haskell generally seem to get tripped up about monads. There are good reasons for this. 
-
 
  1. Monads are, really, needed to write a serious Haskell program. As a consequence, people generally try to learn them fairly shortly after beginning to use Haskell.
  2. Monads are defined in Haskell and have a very short definition. As such, it is very tempting to not just teach someone how to use monads, but to also try to teach them the underlying definition. The definition involves a bunch of rather advanced Haskell. In combination with (1), this is a big problem.
@@ -23,13 +20,13 @@ Outing List
 
 If you're like most programmers I know, lists are very close friends of yours. In fact, I think we all love lists. I don't know how I'd get by without them.
 
-However, lists haven't told you something. They know that most people are really scared of monads and don't want you to be scared of them. But lists are monads. In fact, if you've ever written code like `[a*b | b <- [1,2,3,4], a <- [1,2]]`, you've used them as monads!
+However, lists haven't told you something. They know that most people are really scared of monads and don't want you to be scared of them. But lists are monads. In fact, if you've ever written code like `[a*b | a <- [1,2,3,4], b <- [1,2]]`, you've used them as monads!
 
 (It took several hours of persuasion to make lists feel comfortable telling you this. Please remind them you still love them!)
 
 In Haskell, lists aren't just one type. We can have a list of strings (`[String]`), a list of integers (`[Int]`), a list of tuples of integers and strings (`[ (Int, String) ]`), or... Well, you get the idea. All monads do this: they wrap around a type and make a new type. 
 
-But the main part of what a monad is, is generalizing things like `[a*b | b <- [1,2,3,4], a <- [1,2]]`. That syntax is specific to lists, the more general syntax is a **do block**. If we rewrite that expression as a do block, it is:
+But the main part of what a monad is, is generalizing things like `[a*b | a <- [1,2,3,4], b <- [1,2]]`. That syntax is specific to lists, the more general syntax is a **do block**. If we rewrite that expression as a do block, it is:
 
 ```haskell
 do
@@ -78,6 +75,27 @@ do
 
 ```
 
+because that is the same as
+
+```haskell
+
+foo = do
+	a2 <- [1,2]
+	b2 <- [0,1]
+	return (a2+b2)
+
+-- foo = [1,2,2,3]
+
+do
+	a <- ['a','b']
+	b <- foo -- that is: b <- [1,2,2,3]
+	return (a,b)
+
+-- Output: [('a',1),('a',2),('a',2),('a',3),('b',1),('b',2),('b',2),('b',3)]
+
+```
+
+
 OK, So What About Monads?
 ---------------------------
 
@@ -100,9 +118,16 @@ OK. Let's introduce a new monad! You may not have met it before, but Maybe is th
 Imagine you want to write a lookup function for a hash. Hopefully, we'll find the value for the key we give and the function can return that value, but sometimes we won't be able to. Now, you think, my good friend list will help me! If I succeed, I'll return a singleton list. If I fail, I'll return an empty list.
 
 ```haskell
--- What you're likely thinking!!
+-- What you are likely thinking!!
+
+-- we make a dictionary
 dict = fromList [('a',1), ('b',2)]
+
+-- we can try and look things up
+
+-- A singleton if we succeed
 lookup dict 'a' -- [1]
+-- An empty if we fail
 lookup dict 'c' -- []
 ```
 
@@ -190,7 +215,14 @@ When you do, I strongly recommend Chris Smith's [Why Do Monad's Matter?](http://
 
 Work with monads. With time, they will become a part of the way you think. 
 
-The Parsec library uses monads in a particularily brilliant way, and is also one of the most amazing pieces of code I've ever used. I strongly recommend playing with it.
+The Parsec library uses monads in a particularily brilliant way, and is also one of the most amazing pieces of code I've ever used. I strongly recommend playing with it. An example, from Real World Haskell's [chapter on Parsec](http://book.realworldhaskell.org/read/using-parsec.html), of a slightly simplified CSV file parser to give you a taste:
+
+```haskell
+csvFile = endBy line eol
+line = sepBy cell (char ',')
+cell = many (noneOf ",\n")
+eol = char '\n'
+```
 
 **I found a do block without a return at the end!**
 
