@@ -5,6 +5,8 @@ Monads For The Terrified
 What Is This Craziness?!?
 -------------------------
 
+(You can ignore this section.)
+
 People learning Haskell generally seem to get tripped up about monads. There's good reasons for this. 
 
  1. Monads are, really, needed to write a serious Haskell program. As a consequence, people generally try to learn them fairly shortly after beginning to use Haskell.
@@ -12,7 +14,7 @@ People learning Haskell generally seem to get tripped up about monads. There's g
  3. Monads are a very abstract idea. I'm not really sure that the motivation can be properly grasped by anything other than using them.
  4. Monads are generally interweaved with the idea of an IO object.
 
-This introduction attempts to avoid some of these problems. In particular, it is only going to teach you *how to use monads* and not *what they are*. This avoids (2) and, to a lesser extent, (3). 
+This introduction attempts to avoid some of these problems. In particular, it is only going to teach you *how to use monads* and not *what they are*. This avoids (2) and, to a lesser extent, (3). I've tested this approach on a number of people in the last few months, and it seems to be quite effective. That said, I understand that some people may prefer an introduction focusing on the *what* and *why*, in which case you may wish to look Chris Smith's [Why Do Monad's Matter?](http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/).
 
 Some day, you will need to learn more. But, if you find you understand the contents of this tutorial, I'd encourage you to wait and play around with monads for a while. Then, when the time comes to learn the in full, they'll be natural and obvious ideas. We can talk more about that later. For now: onwards!
 
@@ -181,6 +183,8 @@ Final Questions
 **When should I seak out more knowledge about monads?**
 
 When you feel the urge to start making your own monads. Or after a few months of using them.
+
+When you do, I strongly recommend Chris Smith's [Why Do Monad's Matter?](http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/). It really helps one understand the role of monads in computer science and why we care about them.
 
 **How do I learn the Widom of the Monad?**
 
