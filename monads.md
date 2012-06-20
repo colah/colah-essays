@@ -303,6 +303,8 @@ def
 boo!
 ```
 
+Note: another way to do this is `mapM_ putStrLn ["abc", "def", "boo!"]`.
+
 Another favourite is `forM_`. It is best demonstrated by an example:
 
 ```haskell
