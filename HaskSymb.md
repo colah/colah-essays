@@ -2,6 +2,8 @@
 To The Heart of Symbolic Algebra, With ViewPatterns and QuasiQuoters
 ====================================================================
 
+**(Very much rough and in progress! Not all the code works. Paper based on colah/HaskSymb.)**
+
 
 One of the things that makes Haskell code so elegant is the ability to pattern match. In some lesser languages, one has to spend time breaking input into cases and extracting values, convoluting the code. But Haskell cuts right through this! A cannonical example of this is `fib`:
 
@@ -181,7 +183,10 @@ While we're at it, let's also use **OverloadedStrings** to make variable constru
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
 
-fromString s = Var s
+import GHC.Exts (IsString, fromString)
+
+instance IsString Expr where
+	fromString s = Var s
 ```
 
 Now we can write something like `x*(y+1)` as `"x"*("y"+1)`. Yay! Isn't that nice?
@@ -191,7 +196,7 @@ Back to our evil plot, though. We need to implement `match`.
 Implementing `match`
 --------------------
 
-Fundamentally, we have two tasks in implementing `match`. The first is to parse the expression. The second is to construct the matcher.
+Fundamentally, we have two tasks in implementing `match`. The first is to parse the expression. The second is to construct the matcher. Both will be done in one step.
 
 We will be using two libraries to make this easier.
 
@@ -204,6 +209,90 @@ Wild
 Free "a"
 ListPat [Commutative] [Free "a", Const 1, Free "b", Wild]
 ```
+
+We will implement the pattern matcher as a function on integers, with each integer represetning a level of fixity.
+
+The bottom, zero, level just strips whitespace.
+
+```haskell
+mathPat n@0 = do
+	many space
+	pat <- mathPat (n+1)
+	many space
+	return pat
+```
+
+The next level parses sums. We generate a pattern to commutatively match them, expanding or contracting the sum as necessary for the pattern.
+
+```haskell
+mathPat n@1 =
+	( try $ do
+		pats <- sepBy2 (mathPat (n+1)) (pad $ char '+')
+		return $ PreProcess sumD $ 
+			ListPat [Commutative, CompressExtra Sum, FillMissing 0] pats
+	<|> (mathPat (n+1))
+```
+
+For the next level, we do essentially the same thing as before, for products.
+
+```haskell
+mathPat n@2 =
+	( try $ do
+		pats <- sepBy2 (mathPat (n+1)) (pad $ char '*')
+		return $ PreProcess prodD $ 
+			ListPat [Commutative, CompressExtra Prod, FillMissing 1] pats
+	<|> (mathPat (n+1))
+```
+
+Finally, we parse variables, constants, and bracketed expressions (which we drop back down).
+
+```haskell
+mathPat n@3 = 
+	(try $ fmap (Const'.Const.read) $ many1 digit)
+	(try $ fmap  Free $ many1 letter)
+	) <|> (try $ do
+		char '('
+		a <- mathPat 0
+		char ')'
+		return a
+	)
+```
+
+
+
+
+
+Seeing Clearly
+---------------
+
+At the beginning, we considered the elegance of the cannonical Haskell implementation of `fib`. It was elegant, because nothing was there except our intent. I leave you with these, which need no explanation, and are of the same nature.
+
+```haskell
+expand [m|  a+b  |] = expand a + expand b
+expand [m|a*(b+c)|] = expand (a*b) + expand (a*c)
+expand       a      = a
+
+
+collectTerms [m| aC*x + bC*x + c |] = collectTerms $ (aC+bC)*x + c
+collectTerms [m|    x + bC*x + c |] = collectTerms $ (1+bC) *x + c
+collectTerms [m|    x +    x + c |] = collectTerms $  2     *x + c
+collectTerms          a             =  a
+
+diff var b = collectTerms $ expand $ diff' b
+	where
+		diff' expr | var == expr = 1
+		-- sum rule: D (a+b) = D a + D b
+		diff' [m| a + b|] = diff' a + diff' b
+		-- product rule: D a*b = a * D b + b * D a
+		diff' [m| a * b|] = a* (diff' b) + b* (diff' a)
+		-- constant rule: D k = 0
+		diff' [m| aC |] = 0
+		diff' a = 0
+
+```
+
+
+
 
 
 
