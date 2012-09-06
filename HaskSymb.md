@@ -2,7 +2,7 @@
 To The Heart of Symbolic Algebra, With ViewPatterns and QuasiQuoters
 ====================================================================
 
-**(Very much rough and in progress! Not all the code works. Paper based on colah/HaskSymb.)**
+**(Very much rough and in progress! Not all the code works. Paper based on simplifying colah/HaskSymb.)**
 
 
 One of the things that makes Haskell code so elegant is the ability to pattern match. In some lesser languages, one has to spend time breaking input into cases and extracting values, convoluting the code. But Haskell cuts right through this! A cannonical example of this is `fib`:
@@ -91,7 +91,7 @@ aboutExpr x = case normalize x of
 	...
 ```
 
-This is still ugly, though. Thankfully, the GHC extention **ViewPatterns** can save us! It allows us to run functions on things before pattern matching (syntax: `func -> pattern`).
+This is still ugly, though. Thankfully, the GHC extension `ViewPatterns` can save us! It allows us to run functions on things before pattern matching (syntax: `func -> pattern`).
 
 ```haskell
 {-# LANGUAGE ViewPatterns #-}
@@ -101,7 +101,7 @@ aboutExpr (normalize -> a :+: b :+: c      ) = "3  sum at top"
 ...
 ```
 
-It's a very usefull design pattern. In fact, normalize can be writen better with it, to.
+It's a very useful design pattern. In fact, normalize can be written better with it, to.
 
 ```haskell
 normalize (a :+: (normalize -> b :+: c)) = normalize (a :+: b) :+: c
@@ -136,10 +136,10 @@ expand (match "a+b" -> (a,b)) = expand a :+: expand b
 exapnd a = a
 ```
 
-The exact type we desire for `match` requires a bit of consideration. Clearly, the first argument is a `String`, the next a `Expr`, but what is the result? We can't use tuples, as we do above, because the number of variables matched may vary. So a list of `Expr`s. But we need to be able to represent failure, so `Maybe [Expr]`.
+The exact type we desire for `match` requires a bit of consideration. Clearly, the first argument is a `String`, the next a `Expr`, but what is the result? We can't use tuples, as we do above, because the number of variables matched may vary. So a list of `Expr`s. But we need to be able to represent failure, so `Maybe [Expr]`. And, actually, there can be multiple answers (consider matching `2+1` to `a+b`: `[[2,1],[1,2]]`), so it should be a list of solutions instead of a `Maybe`.
 
 ```haskell
-match :: String -> Expr -> Maybe [Expr]
+match :: String -> Expr -> [[Expr]]
 ```
 
 Allowing for things like:
@@ -148,7 +148,10 @@ Allowing for things like:
 expand (match "a*(b+c)" -> [a,b,c]:_ ) = expand (a :*: b) + expand (a :*: c)
 ```
 
-Now, at this point, our original `Expr` definition is rather silly. It was motivated by the syntax of its pattern matches being close to our normal mathematical syntax, but that's no longer relevant. Instead, let us build a data type that more closesly matches the data's nature.
+Conveniences & Luxuries
+-----------------------
+
+Now, at this point, our original `Expr` definition is rather silly. It was motivated by the syntax of its pattern matches being close to our normal mathematical syntax, but that's no longer relevant. Instead, let us build a data type that more closely matches the data's nature.
 
 ```haskell
 data Expr = Const Int
@@ -178,7 +181,7 @@ instance Num Expr where
 	signum a = error "abs not implemented -- sorry, Num is silly"
 ```
 
-While we're at it, let's also use **OverloadedStrings** to make variable construction easy. :)
+While we're at it, let's also use `OverloadedStrings` to make variable construction easy. :)
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
@@ -200,6 +203,11 @@ Fundamentally, we have two tasks in implementing `match`. The first is to parse 
 
 We will be using two libraries to make this easier.
 
+```haskell
+import Text.Parsec
+import 
+```
+
 The first is the well known *Parsec*, a combinatoric parsing library. It seems redundant to remind the reader of its API.
 
 The second is *PatternPower*. It was written to solve more general pattern matching problems. The following are patterns in it:
@@ -210,7 +218,7 @@ Free "a"
 ListPat [Commutative] [Free "a", Const 1, Free "b", Wild]
 ```
 
-We will implement the pattern matcher as a function on integers, with each integer represetning a level of fixity.
+We will implement the pattern matcher as a function on integers, with each integer representing a level of fixity.
 
 The bottom, zero, level just strips whitespace.
 
@@ -258,36 +266,71 @@ mathPat n@3 =
 	)
 ```
 
+To QuasiQuotation and Beyond!
+-----------------------------
 
+Now we are able to write silly things like this:
 
+```haskell
+expand (match "a*(b+c)" -> [a,b,c]:_ ) = expand (a :*: b) + expand (a :*: c)
+```
 
+And you know what? It's still silly. There's still duplicated work. Why are we naming variables in `"a*(b+c)"` and again in `[a,b,c]`? Because of silliness. Because we are working around a limitation of the language, instead of in an ideal syntax.
+
+Thankfully, GHC is coming to our rescue again. This time, with the `TemplateHaskell` and `QuasiQuotes` extensions.
+
+What is a QuasiQuoter, you ask? Well, it's a way to extend Haskell's syntax. You wrap your new language in `[quasiQuoterName|` and `|]` and transform it into a Haskell expression, pattern, type, or declaration.
+
+In our case, we'll be declaring a `m` QuasiQuoter such that `[m| a*(b+c) |]` is equivalent to the pattern `match "a*(b+c)" -> [a,b,c]:_`.
+
+Let's declare the QuasiQuoter. First we need some libraries.
+
+```haskell
+import Language.Haskell.TH as TH
+import Language.Haskell.TH.Quote
+```
+
+This gives us the `QuasiQuoter` constructor. It takes four arguments, each one describing how to work in a different case.
+
+```haskell
+m  =  QuasiQuoter 
+	(error "m doesn't support generating expressions.")
+	mPat
+	(error "m doesn't support generating types.")
+	(error "m doesn't support generating declarations.")
+```
+
+And now we just need to declare `mPat :: String -> TH.PatQ` (turns strings into Template Haskell patterns).
+
+Now, do you remember our friend the pattern power library? It provides `finishPat :: SymbPat a -> PatQ` which can do the heavy lifting for us.
+
+```haskell
+mPat = finishPat . matchPat
+```
 
 Seeing Clearly
 ---------------
 
-At the beginning, we considered the elegance of the cannonical Haskell implementation of `fib`. It was elegant, because nothing was there except our intent. I leave you with these, which need no explanation, and are of the same nature.
+At the beginning, we considered the elegance of the canonical Haskell implementation of `fib`. It was elegant, because nothing was there except our intent. I leave you with these, which need no explanation, and are of the same nature.
 
 ```haskell
 expand [m|  a+b  |] = expand a + expand b
 expand [m|a*(b+c)|] = expand (a*b) + expand (a*c)
 expand       a      = a
 
-
 collectTerms [m| aC*x + bC*x + c |] = collectTerms $ (aC+bC)*x + c
 collectTerms [m|    x + bC*x + c |] = collectTerms $ (1+bC) *x + c
 collectTerms [m|    x +    x + c |] = collectTerms $  2     *x + c
 collectTerms          a             =  a
 
-diff var b = collectTerms $ expand $ diff' b
+diff var b = collectTerms . expand . diff' $ b
 	where
-		diff' expr | var == expr = 1
-		-- sum rule: D (a+b) = D a + D b
-		diff' [m| a + b|] = diff' a + diff' b
-		-- product rule: D a*b = a * D b + b * D a
-		diff' [m| a * b|] = a* (diff' b) + b* (diff' a)
-		-- constant rule: D k = 0
-		diff' [m| aC |] = 0
-		diff' a = 0
+		diff' [m| a + b |] = diff' a + diff' b
+		diff' [m| a * b |] = a* (diff' b) + b* (diff' a)
+		diff' [m|   aC  |] = 0
+		diff'      expr 
+		     | var == expr = 1
+		diff'       _      = 0
 
 ```
 
