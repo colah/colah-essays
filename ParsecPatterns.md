@@ -3,6 +3,8 @@ Parsec Patterns
 
 At the last meeting of the Toronto Haskell User Group (Jan 9, 2013), after going over the basics of combinatoric parsing library Parsec, I talked about some clever tricks that made my work with it much cleaner.
 
+Note that I don't have deep knowledge of Parsec. I've just used it for a few things and noticed that some code patterns really cleaned up my code. I'd love to hear about other people's tricks for writing awesome parsers with Parsec!
+
 The Branch and Help Combinators
 -------------------------------
 
