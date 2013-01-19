@@ -22,9 +22,9 @@ A parsing branch, where we can parse one thing or another, is represented with t
 string "abc" <|> string "def"
 ```
 
-Now, the default behavior of Parsec is to not backtrack in parsing for efficiency reasons. For example, `string "abc" <|> string "adef"` could never successfuly parse "adef" because it wouldn't backtrack from successfully parsing the leading 'a' with `string "abc"`.
+Now, the default behavior of Parsec is to not backtrack in parsing for efficiency reasons. For example, `string "abc" <|> string "adef"` could never successfully parse "adef" because it wouldn't backtrack from successfully parsing the leading 'a' with `string "abc"`.
 
-To circumvent this behavior, we have the `try` function which takes a parser and backtracks if it fails. For example, we could get the desired behavior from the previors example by writing:
+To circumvent this behavior, we have the `try` function which takes a parser and backtracks if it fails. For example, we could get the desired behavior from the previous example by writing:
 
 ```hs
 try (string "abc") <|> string "adef"
@@ -76,11 +76,9 @@ a =
 		...
 ```
 
-Or, a little bit cleaner.
-
 Eww.
 
-As evryone knows, brackets are icky and have cooties, especially when they surround code blocks. And especially when they're nested.
+As everyone knows, brackets are icky and have cooties, especially when they surround code blocks. And especially when they're nested.
 
 We can make it a bit cleaner with a `$` operator.
 
@@ -98,7 +96,7 @@ But it still rapidly becomes gross as the code grows.
 
 ... But wait, there's more!
 
-One of the neatest features of Parsec is its capacity to give intelligent error messages. This is largely dependant on people giving human readable names to different things that can be parsed with the `<?>` operator. For example, `many1 digit <?> "integer"`.
+One of the neatest features of Parsec is its capacity to give intelligent error messages. This is largely dependent on people giving human readable names to different things that can be parsed with the `<?>` operator. For example, `many1 digit <?> "integer"`.
 
 But how does that mix into our new code? Well...
 
@@ -174,7 +172,7 @@ To see how this can improve code, have a look at this [before](https://github.co
 Smart Whitespace
 ----------------
 
-Extopenscad for statments are things like `for (a = [1,2,3]) ...`. Here's a slightly simplified version of the original parser for them:
+Extopenscad for statements are things like `for (a = [1,2,3]) ...`. Here's a slightly simplified version of the original parser for them:
 
 ```hs
 forStatement = do
