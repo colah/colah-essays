@@ -3,7 +3,7 @@
 \input{lib.tex}
 
 \title{Towards a Better Notation for Mathematics}
-\author{Christopher Olah}
+\author{Christopher Olah (\hbox{chris@colah.ca})}
 \date{July 8, 2010}
 
 \begin{document}
@@ -12,35 +12,31 @@
 
 \begin{quotation}
 
-{\bf Abstract:} This paper recognises the suboptimal characteristics of modern mathematical notation and presents some alternative notations.\\
+{\bf Abstract:} This paper explores alternative notations for mathematics. We consider numerical notations that make arithmetic easier, a notation for quantifiers that reduces the number of variables one needs to track, and many other ideas.\\
 
 ({\bf Regarding Notation:} The typographical quality of new symbols introduced in this paper is terribly lacking -- you will likely need to zoom in on them to see them well. This is because the author is injecting them as images. A font is in the works but isn't much better, as the author is not a skilled font-craft.)\\
 
-({\bf Rough Draft:} Please don't cite or widely distribute this version. A finished version is on its way.)\\
+{\bf Update:} I've made some minor changes to young-me's work to clean things up a bit. That said, please keep in mind that I've progressed a long way since writing this and it isn't representative of my current abilities.
 
 \end{quotation}
 
 \tableofcontents
-% 
-% \section{Introduction}
-% 
-% Mathematical notation must represent immensely complicated ideas; with this in mind, it is clear that it does a remarkably good job. On the other hand, any claim that modern mathematical  notation is the \emph{best} should be met with extreme scepticism.
-% 
-% 
+\section{Introduction}
+
+When one considers how complicated the ideas mathematical notation must represent are, it clearly does quite a good job. Despite this, the author believes that any claim that modern mathematical  notation is the \emph{best} should be met with extreme scepticism.
+ 
 % %\subsection{An Evolved Language}
 % 
-% %Mathematical notation is a natural language: no one sat down and constructed it, but rather it formed gradually by people making changes that are adopted. Most changes are not adopted; whether they are depends on a variety of factors including: mathematical utility, ease of adoption (the average individual doesn't want to spend hours learning), dissemination, and shear dumb luck. The first two of these qualities are associated to real properties in notation, forming the necessary selective pressure for evolution to occur.
-% 
-% Evolution is a blind watchmaker: the world around us is filled with examples of the stupidity of biological evolution (eg. the halibut). Evolution is also a blind language/notation designer. In particular, it is held back by a strong selective force against change, since people would need to adopt it. This staticism means that even the most outrageous notations remain unchallenged by virtue of age.
-% 
+Mathematical notation is a natural language: no one sat down and constructed it, but rather it formed gradually by people making changes that are adopted. Most changes are not adopted; whether they are depends on a variety of factors including: mathematical utility, ease of adoption (the average individual doesn't want to spend hours learning), dissemination, and shear dumb luck. The first two of these qualities are associated to real properties in notation, forming the necessary selective pressure for evolution to occur.
+ 
+Evolution is a blind watchmaker: the world around us is filled with examples of the stupidity of biological evolution (the classic example being halibut). Similarly, evolution is also a blind language and notation designer. In particular, it is held back by a strong selective force against change, since people would need to adopt it, and so evolution doesn't effectively explore the full notation-space. This staticism means that even the most outrageous notations remain unchallenged by virtue of age.
+
 % It is absurd to believe that this staticism or even the incremental process of evolution itself are in the best interest of humanity as regards any language, least of all the language of the sciences, the notation of mathematics.
 % 
 % \subsection{Significance}
-% 
-% The idea that the language one thinks in effects the way one thinks is not new. Called the Sapir-Whorf hypothesis, it is the motivation behind many constructed languages, such as lojban.
-% 
-% Using a suboptimal language is limiting. Programmers might imagine the difference between programming in Fortran and Ruby of Python -- very different experiences. 
-% 
+
+The importance of notation is widely recognized in computer science: progress in the design of programming languages over the last few decades has been immense and has been strongly felt by the community. The difference between programming in a legacy language like Fortran and a modern language (Python, Ruby, Haskell, etc) is immense. This idea, that language and notation are important is not an invention of computer science. The Sapir-Whorf hypothesis asserts the language one thinks in effects the way one thinks, and has motivated the creation of many constructed Human languages, such as Esperanto and lojban. But no such intentional language construction seems to be done in mathematics, save perhaps right at the cutting edge of research.
+
 % (Since its inception, mathematical notation has been performing a balancing act between backwards compatibility (so the masses don't have to relearn everything) and needing to be able to handle the new ideas that result from mathematical progress. In modern times, this has only been exasperated as the population of the masses increased and the rate of mathematical progress did likewise. To use a programming language analogy, modern mathematical notation is where python or ruby would be if they tried to maintain backwards compatibility with Fortran -- and continued trying after they inevitably failed.)
 % 
 % (It goes without saying that this has crippled the potential of mathematical notation.)
@@ -53,7 +49,11 @@
 % 
 % Language is our tool. It is time to make notation not be the conveniently shaped stone that was tossed our way by history, but a knife sharpened by the greatest minds we can bring to bare on it.
 % 
-% The first step towards this is simply to brainstorm about this new notation. This paper will outline some ideas I've come up with. However, before proceeding further and becoming contaminated with these ideas, I would encourage the reader to think about this matter for a few moments: perhaps you will come up with better ideas that can act as the basis for a new and better notation for mathematics.
+% The first step towards this is simply to brainstorm about this new notation. 
+
+It may be that the gains of moving to a different notation are so small that they don't justify the cost of switching. But it may also be the case that some notation exists which would greatly increase Human mathematical capabilities. We won't know unless we explore the possibilities.
+
+This paper doesn't assert to be anywhere near the best possible notation. It simply seeks to introduce some interesting ideas. However, before proceeding further and becoming contaminated with these ideas, I would encourage the reader to think about this matter for a few moments: perhaps you will come up with better ideas that can act as the basis for a new and better notation for mathematics.
 
 
 \section{Version Representation}
