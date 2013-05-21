@@ -40,6 +40,9 @@ Anti-Patterns
 
 People do all sorts of really troubling things in relationships. If we note them, we can make sure to avoid them in ourselves and potential partners.
 
+* Lots of partners are subtly mean and coercive to each other.
+* A lot of relationships don't seem to be between equals and have power dynamics. (I don't really understand being attracted to someone you don't consider your equal?)
+* Some studies have found rather negative correlations age-disparity and relationship outcomes for the younger party -- the one I'm thinking of was either more than 5 or 7 years. "You aren't a lottery ticket" and all that applies, but...
 
 Rambles
 ---------
@@ -52,15 +55,15 @@ Rambles
 
 * Most people never meet the people they could form the best relationship with. The larger the candidate pool, the greater the variation between the best match you are likely to meet and the best match out there. So, the present situation on Earth is extremely tragic. Computer association of partners is a promising solution. See Human Pairing Problem essay.
 
+* Unpleasant men seem to be disproportionately successful in dating.
+ * Purely anecodotal, may suffer from a number of biases, notably confirmation bias.
+
 * A lot of people I deeply respect are polyamorous.
-  * Polyamory is illegal in Canada: CCC s. 293 is title polygamy, but more general; see also Reference re: Criminal Code, s. 293, 2010 BCSC 1308
-    * As such, obviously, all the polyamorous people I deeply respect do not live in Canada.
-    * Even were I persuaded that polyamory is a good idea, I would obviously move away from Canada before acting on such a belief.
-  * Polyamory seems to have a bimodal distribution of relationship quality, with most relationships I'm aware of either being really admirable or horrifying.
-    * This may just generally be true of relationships that are not socially normative. Standard deviation of relationship quality increases...
+  * Polyamory is illegal in Canada: CCC s. 293 is title polygamy, but more general; see also Reference re: Criminal Code, s. 293, 2010 BCSC 1308. (I'm deeply skeptical that this would survive serious Charter scrutiny and think this is a Human rights violation. Unfortunately, the case law seems to have solely developed in the context of Bountiful, British Columbia.) In any event, obviously all these polyamorous people I deeply respect do not live in Canada. And even were I persuaded that polyamory is a good idea, I obviously wouldn't act on that while I remain in Canada.
+  * Polyamory seems to have a bimodal distribution of relationship quality, with most relationships I'm aware of either being really admirable or horrifying. (This may just generally be true of relationships that are not socially normative. Standard deviation of relationship quality increases...)
   * There are moderately compelling moral arguments for polyamory.
   * It seems reasonable to think that whether polyamory is a good idea or not varies greatly from person to person.
-    * I am very uncomfortable with the idea, and pretty certain that I don't want to be in a polyamorous relationship, despite thinking they can be ethical.
+  * I am personally uncomfortable with the idea, and pretty certain that it isn't for me, despite thinking they can be ethical.
 
 * Non socially normative relationships present some interesting difficulties.
   * In average relationships, people have an external set of expectations about how to behave in a relationship. How to treat each other, expected behavior, etc. They may be quite problematic, including sexist, but they're external to the relationship. Obviously, these external expectations don't cover everything, but they give a sturdy framework.
@@ -69,3 +72,25 @@ Rambles
   * It seems like having an early conversation about this is a good idea in a relationship. Perhaps even independently writing out what one expects in the relationship.
 
 
+Are Relationships a Good Idea?
+--------------------------------
+
+That relationships are a positive thing and an ultimate part of positive outcomes in life is quite broadly accepted, save a few edge cases like priesthood. This isn't at all surprising. Romantic relationships are essential to evolutionary success, and evolution has many tricks to keep us on this path.
+
+But it isn't immediately clear to me that relationships are generally positive things in the long run. Answering if or when they are is clearly an extremely important question for my long term well being.
+
+* Initial romantic attraction is a very pleasant experience, partly characterized by "labile psychophysiological responses to the loved person" by Fisher. However, it generally fades after about six months. The experience of romantic attachment is less obviously pleasant and more enforced by negative feelings to damage of the relationship. (See Fisher, 1998) Perhaps evolution gets us where it needs us with a carrot, then switches to a stick?
+
+* Romantic relationships involve a tremendous risk of being very deeply hurt.
+
+* Romantic relationships have a very deep time and energy investment.
+  * Thinking of time as an inelastic resource is kind of naive, in my experience. So much of my time falls through the cracks, and I recapture it when I have the right motivations.
+  * Early romantic attraction frequently involves a reduced need for sleep (because of increased dopamine?)...
+
+* In romantic attraction / relationships, partners are often ready to under go radical changes in themselves to make themselves more appealing to the desired partner.
+  * A visible example of this is that people often radically change their physical appearance at the beginning of relationships.
+  * This cuts both for and against romantic relationships. They could both help one change in positive and negative ways, largely depending on (your perception of) your partner.
+
+* Many friends and people that I respect tell me of how greatly relationships improved their quality of life. Others describe it not having much impact after a few months of feeling amazing. A small number are extremely negative about it. But I don't think any of them are a terribly objective source.
+
+* 
