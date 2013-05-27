@@ -47,9 +47,7 @@ People do all sorts of really troubling things in relationships. If we note them
 Rambles
 ---------
 
-* Revealing romantic interest is a prisoners dilemma. Both reveal is awesome, neither reveals is sad, one reveals and the other doesn't really sucks.
-
-* What is a good romantic partner? Makes you happy? Drives your growth/productivity? Good reproductive partner (genetics & child rearing skills)? You don't fight? A weighted combination of the above? It varies over time?
+* What is a good romantic partner? Triggers romantic attraction? Makes you happy? Makes you feel peaceful? Drives your growth/productivity? Good reproductive partner (genetics & child rearing skills)? You don't fight? Sex? Social status? A weighted combination of the above? It varies over time?
 
 * I don't see much reason to think that Humans are particularly good at recognizing good partners, especially if "makes you happy" isn't the primary quality you are looking for in a partner. And especially when it comes to differentiating between fairly good and great partners -- clearly we're quite good at avoiding certain classes of horrible relationships!
 
@@ -59,9 +57,10 @@ Rambles
  * Purely anecodotal, may suffer from a number of biases, notably confirmation bias.
 
 * A lot of people I deeply respect are polyamorous.
-  * Polyamory is illegal in Canada: CCC s. 293 is title polygamy, but more general; see also Reference re: Criminal Code, s. 293, 2010 BCSC 1308. (I'm deeply skeptical that this would survive serious Charter scrutiny and think this is a Human rights violation. Unfortunately, the case law seems to have solely developed in the context of Bountiful, British Columbia.) In any event, obviously all these polyamorous people I deeply respect do not live in Canada. And even were I persuaded that polyamory is a good idea, I obviously wouldn't act on that while I remain in Canada.
+  * Polyamory is illegal in Canada: CCC s. 293 is title polygamy, but more general; see also Reference re: Criminal Code, s. 293, 2010 BCSC 1308. (I'm deeply skeptical that this would survive serious Charter scrutiny and think this is a Human rights violation. Unfortunately, the case law seems to have solely developed in the context of Bountiful, British Columbia.) In any event, *obviously* all these polyamorous people I deeply respect do not live in Canada. And even were I persuaded that polyamory is a good idea, I obviously wouldn't act on that while I remain in Canada.
   * Polyamory seems to have a bimodal distribution of relationship quality, with most relationships I'm aware of either being really admirable or horrifying. (This may just generally be true of relationships that are not socially normative. Standard deviation of relationship quality increases...)
   * There are moderately compelling moral arguments for polyamory.
+  * In polyamory, one can have different partners that optimize for different types of "good" things in a romantic partner. For example, one partner might make one happy, while another might cause one to develop as a person.
   * It seems reasonable to think that whether polyamory is a good idea or not varies greatly from person to person.
   * I am personally uncomfortable with the idea, and pretty certain that it isn't for me, despite thinking they can be ethical.
 
@@ -93,4 +92,30 @@ But it isn't immediately clear to me that relationships are generally positive t
 
 * Many friends and people that I respect tell me of how greatly relationships improved their quality of life. Others describe it not having much impact after a few months of feeling amazing. A small number are extremely negative about it. But I don't think any of them are a terribly objective source.
 
-* 
+
+Signaling
+----------
+
+One important and complicated issues around romantic relationships is the initial signaling that starts them. Expressing romantic interest in someone overtly is a costly action: it can hurt your relationship with them, with other people, make them feel uncomfortable, reduce your social standing, etc. Meanwhile, a positive outcome is fairly unlikely. So, people don't typically directly express romantic interest. Instead there's typically an exchange of increasingly stronger signals between them ("flirting"). This interplay reduces the risk of both parties, but is problematic if you can't read social queues or social skills aren't your strong point.
+
+* Revealing romantic interest is a prisoners dilemma. Both reveal is awesome, neither reveals is sad, one reveals and the other doesn't really sucks.
+
+* Initiating this sort of interaction typically falls to men, I think. Especially when it comes to escellating signals.
+  * This seems really unfair.
+
+* One deep concern I have about attempts to signal is making the person I am trying to express interest in uncomfortable. 
+  * This is especially true in hacking/CS/math/physics communities that suffer from sexism and gender-biases if you're a heterosexual male. And especially hacklab where I am in a position of leadership (albeit very minor). The damage that could be done (awesome female is creeped out and leaves the community) seems to outweigh my interest.
+  * H- & D- both think that I'm at no risk of doing this and should stop considering this.
+  * subtle back and forth signaling can really help here.
+  * Perhaps this has to do with the seeming disproportionate romantic success of people who aren't considerate of other people's feelings? If you aren't taking the risk of hurting them into consideration, signaling is much easier. (Again, this could just be confirmation bias.)
+
+* Desperation is a really bad signal. Seeming desperate for friends or partners is severely unattractive. Use common sense.
+
+* H- views this as an important skill (one of many) that one develops on low value relationships so that one is ready for a potentially very good relationship.
+
+* R- in blog describes a bunch of attempts at signaling that I would never have noticed. (How many people have tried to flirt with me and I didn't notice it?)
+
+* It would be really nice if the expected behavior could be less subtle. If we made the signal less costly, less personal, and less subtle, that would be a very positive thing.
+  * Technology is a really big opportunity here.
+
+
