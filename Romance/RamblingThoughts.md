@@ -42,6 +42,8 @@ People do all sorts of really troubling things in relationships. If we note them
 
 * Lots of partners are subtly mean and coercive to each other.
 * A lot of relationships don't seem to be between equals and have power dynamics. (I don't really understand being attracted to someone you don't consider your equal?)
+  * On the other hand, some people enjoy that -- the extreme example being consensual BDSM relationships -- and I'm not trying to be judgmental.
+  * I think I'm talking about something subtler...
 * Some studies have found rather negative correlations age-disparity and relationship outcomes for the younger party -- the one I'm thinking of was either more than 5 or 7 years. "You aren't a lottery ticket" and all that applies, but...
 
 Rambles
@@ -100,7 +102,7 @@ One important and complicated issues around romantic relationships is the initia
 
 * Revealing romantic interest is a prisoners dilemma. Both reveal is awesome, neither reveals is sad, one reveals and the other doesn't really sucks.
 
-* Initiating this sort of interaction typically falls to men, I think. Especially when it comes to escellating signals.
+* Initiating this sort of interaction typically falls to men, I think. Especially when it comes to escalating signals.
   * This seems really unfair.
 
 * One deep concern I have about attempts to signal is making the person I am trying to express interest in uncomfortable. 
@@ -109,13 +111,24 @@ One important and complicated issues around romantic relationships is the initia
   * subtle back and forth signaling can really help here.
   * Perhaps this has to do with the seeming disproportionate romantic success of people who aren't considerate of other people's feelings? If you aren't taking the risk of hurting them into consideration, signaling is much easier. (Again, this could just be confirmation bias.)
 
-* Desperation is a really bad signal. Seeming desperate for friends or partners is severely unattractive. Use common sense.
+* Disinterest and business are a signal for quality. Conversely, desperation is a really bad signal: seeming desperate for friends or partners is severely unattractive. Use common sense.
+  * This really, really complicates things.
+  * This seems on net negative.
+  * J- commented that some girls he knew would have rules like not accepting dates for Saturday any later than Wednesday, in order to emulate scarcity.
 
 * H- views this as an important skill (one of many) that one develops on low value relationships so that one is ready for a potentially very good relationship.
 
 * R- in blog describes a bunch of attempts at signaling that I would never have noticed. (How many people have tried to flirt with me and I didn't notice it?)
 
+* D- thinks one can substantially ignore the other persons signaling if they can't understand it, and focus on sending their own signals.
+  * I supposes this only works when only one party is socially unskilled.
+
 * It would be really nice if the expected behavior could be less subtle. If we made the signal less costly, less personal, and less subtle, that would be a very positive thing.
   * Technology is a really big opportunity here.
+
+* If you aren't very socially skilled and bad on picking up on queues, what can you do to avoid subtle signals?
+  * Write about this publicly, so that they'll know they need to be less subtle?
+  * Provide public information (an OkCupid profile?) so that they can build a better model of you and be more confident that you are of interest to them and that they'd be of interest to you?
+  * Make relationship status public (eg. for me on 05/30/2013, single, has never dated) so that potential partner doesn't have to worry about whether there might be an existing relationship?
 
 
