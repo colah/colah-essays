@@ -33,7 +33,11 @@ The fact that, in reality, the utility of an outcome isn't solely determined by 
 
 * Intuitively, I feel like there's something very special about the first relationship. That if I could make it be really awesome and work out, that would be best. That I might be less able to form deep relationships after it. Everyone I respect tells me this is ridiculous. H- proposed as a test that I should try and find an expert who will argue for this position, and if I can't that is strong evidence against it -- I haven't tried yet, but the fact that I don't have a very high confidence in succeeding doesn't bode well for this. I don't really intellectually believe this to be true, but I feel it very strongly emotionally.
 
+Other Romance Game Theory
+----------------------------
 
+* The Stable Marriage Problem
+* The Multi-Armed Bandit problem
 
 Anti-Patterns
 --------------
@@ -56,7 +60,7 @@ Rambles
 * Most people never meet the people they could form the best relationship with. The larger the candidate pool, the greater the variation between the best match you are likely to meet and the best match out there. So, the present situation on Earth is extremely tragic. Computer association of partners is a promising solution. See Human Pairing Problem essay.
 
 * Unpleasant men seem to be disproportionately successful in dating.
- * Purely anecodotal, may suffer from a number of biases, notably confirmation bias.
+ * Purely anecdotal, may suffer from a number of biases, notably confirmation bias.
 
 * A lot of people I deeply respect are polyamorous.
   * Polyamory is illegal in Canada: CCC s. 293 is title polygamy, but more general; see also Reference re: Criminal Code, s. 293, 2010 BCSC 1308. (I'm deeply skeptical that this would survive serious Charter scrutiny and think this is a Human rights violation. Unfortunately, the case law seems to have solely developed in the context of Bountiful, British Columbia.) In any event, *obviously* all these polyamorous people I deeply respect do not live in Canada. And even were I persuaded that polyamory is a good idea, I obviously wouldn't act on that while I remain in Canada.
@@ -94,6 +98,26 @@ But it isn't immediately clear to me that relationships are generally positive t
 
 * Many friends and people that I respect tell me of how greatly relationships improved their quality of life. Others describe it not having much impact after a few months of feeling amazing. A small number are extremely negative about it. But I don't think any of them are a terribly objective source.
 
+
+Productivity And Romance
+-------------------------
+
+(A lot of this is the same content as "Are Relationships a Good Idea?" from a different perspective.)
+
+Naively, relationships seem very harmful to ones productivity. It's clearly a huge time investment. One can argue that many people's productivity would be harmed more by not being in a relationship (depression, sadness, obsessive thoughts about it)...
+
+But "it's the least bad option" is not a very satisfying answer.
+
+(I don't like evolution beating me into a corner with a dopageneric stick.)
+
+So, the question is, can there be a positive relationship between romance and productivity. The following is brainstorming:
+
+* Typically, couple's bonding time consists of things like watching movies, lazing about, talking about unimportant issues, etc. But if both parties are more interested in higher concerns, can that lead to them instead spending time learning or working on valuable projects?
+  * Elements of this in D-&J- and E-&J- ??
+
+* During romantic attraction, people change themselves to be more attractive to their partner, including changes to physical appearance, beliefs, ideals, etc. If attributes that make you attractive include things like ethics or intellectual curiosity...
+
+* Could romance allow deeper collaboration through intellectual intimacy -- less filtering, more honesty about feelings?
 
 Signaling
 ----------
