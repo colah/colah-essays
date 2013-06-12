@@ -36,8 +36,12 @@ The fact that, in reality, the utility of an outcome isn't solely determined by 
 Other Romance Game Theory
 ----------------------------
 
-* The Stable Marriage Problem
-* The Multi-Armed Bandit problem
+* [The Multi-Armed Bandit problem](http://en.wikipedia.org/wiki/Multi-armed_bandit): The mult-armed bandits are slot machines, with different pay outs which you can only learn by trying them. There's a tradeoff between exploring the possibilities and exploiting the best option you find. The problem generalizes to lots of scenarios where you are distributing resources between possibilities. For example, if you have multiple romantic candidates of unknown quality...
+
+* [The Stable Marriage Problem](http://en.wikipedia.org/wiki/Stable_marriage_problem)
+
+* [Monogamy as a Prisoners Dilemma: Non-Monogamy as a Collective Action Problem](http://www.changesurfer.com/Acad/Monogamy/Mono.html)
+
 
 Anti-Patterns
 --------------
@@ -129,8 +133,11 @@ One important and complicated issues around romantic relationships is the initia
 * Initiating this sort of interaction typically falls to men, I think. Especially when it comes to escalating signals.
   * This seems really unfair.
 
-* One deep concern I have about attempts to signal is making the person I am trying to express interest in uncomfortable. 
+* One deep concern I have about attempts to signal is making the person I am trying to express interest in uncomfortable or acting in a way that is hurtful to them. 
   * This is especially true in hacking/CS/math/physics communities that suffer from sexism and gender-biases if you're a heterosexual male. And especially hacklab where I am in a position of leadership (albeit very minor). The damage that could be done (awesome female is creeped out and leaves the community) seems to outweigh my interest.
+  * There's really 2 separate problems:
+  * (1) Making someone uncomfortable/unsafe. This connects directly to the ["schrodinger's rapist"](http://kateharding.net/2009/10/08/guest-blogger-starling-schrodinger%E2%80%99s-rapist-or-a-guy%E2%80%99s-guide-to-approaching-strange-women-without-being-maced/) issue.
+  * (2) Re-enforcing or triggering lots of sexist nonsense. (eg. That women are being respected in a community because of sexual/romantic appeal.)
   * H- & D- both think that I'm at no risk of doing this and should stop considering this.
   * subtle back and forth signaling can really help here.
   * Perhaps this has to do with the seeming disproportionate romantic success of people who aren't considerate of other people's feelings? If you aren't taking the risk of hurting them into consideration, signaling is much easier. (Again, this could just be confirmation bias.)
