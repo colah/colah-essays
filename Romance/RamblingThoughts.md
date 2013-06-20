@@ -102,6 +102,8 @@ But it isn't immediately clear to me that relationships are generally positive t
 
 * Many friends and people that I respect tell me of how greatly relationships improved their quality of life. Others describe it not having much impact after a few months of feeling amazing. A small number are extremely negative about it. But I don't think any of them are a terribly objective source.
 
+* J2- referred me to this really interesting LessWrong post, [How To Be Happy](http://lesswrong.com/lw/4su/how_to_be_happy/) "Factors that don't correlate much with happiness include: age,7 gender,8 parenthood,9 intelligence,10 physical attractiveness,11 and money12 (as long as you're above the poverty line). Factors that correlate moderately with happiness include: health,13 social activity,14 and religiosity.15 Factors that correlate strongly with happiness include: genetics,16 love and relationship satisfaction,17 and work satisfaction.18"
+
 
 Productivity And Romance
 -------------------------
@@ -122,6 +124,16 @@ So, the question is, can there be a positive relationship between romance and pr
 * During romantic attraction, people change themselves to be more attractive to their partner, including changes to physical appearance, beliefs, ideals, etc. If attributes that make you attractive include things like ethics or intellectual curiosity...
 
 * Could romance allow deeper collaboration through intellectual intimacy -- less filtering, more honesty about feelings?
+
+* There's a pretty long tradition of romantic partners as scientific collaborators.
+ * Famous example: Marie Curie & Pierre Curie 
+ * Seems quite wide spread. Asking one friend in Academia, then rattled off a list of a dozen or so pairs with little thought.
+ * A small body of literature has built up exploring this topic. Terms to search for are: dual careers, academic couples, intimate collaborators, intimate romantic partners, etc.
+ * *Knowledge Production, Publication Productivity, and Intimate Academic Partnership* (Greamer, 1999) explores the effects of romantic partners as collaborators on productivity. It's a very small and limited sample in a few ways (eg. older generation). There's high variance in the impact of these relationships on productivity. There's also a striking pattern of partners feeling unable to heavily collaborate because of the expectations of the academic community. Informal feedback and honest criticism on work from partners may be important. One pair of psychologists seem to have a story of very deep and extremely important collaboration where they mutually developed ideas over years of conversation. 
+  * *Love in the lab: Women scientists and engineers married to or partnered with other scientists and engineers* (Blaser) begins with a nice literature review and lots of references. One interesting quote: "Approximately
+70% of female physicists are married to other scientists and 80% of female mathematicians are married to other mathematicians (Gibbons 1992)." (I haven't been able to read Gibbons yet). 
+  * Seems like early research found negative correlations for male productivity with having an academic partner. It is speculated that this is because of a more egalitarian distribution of house work. It may be better modernly? (Also, I'd personally value that and would do that regarless of partner, so it doesn't matter much.)
+  * (I should review further when not half-asleep)
 
 Signaling
 ----------
@@ -156,6 +168,8 @@ One important and complicated issues around romantic relationships is the initia
 
 * It would be really nice if the expected behavior could be less subtle. If we made the signal less costly, less personal, and less subtle, that would be a very positive thing.
   * Technology is a really big opportunity here.
+
+* Reading social signals is hard in general, but it's easy to see if someone is choosing to spend time with you, which is a very strong positive signal, though not differentiated to romance. If you care about both friendship and romance, which one of these it is often doesn't matter.
 
 * If you aren't very socially skilled and bad on picking up on queues, what can you do to avoid subtle signals?
   * Write about this publicly, so that they'll know they need to be less subtle?
