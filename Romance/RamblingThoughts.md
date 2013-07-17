@@ -80,6 +80,27 @@ Rambles
   * A power dynamic can form where one partner gets to decide all the expectations (and change them).
   * It seems like having an early conversation about this is a good idea in a relationship. Perhaps even independently writing out what one expects in the relationship.
 
+Romance Space & Clusters
+-------------------------
+
+THIS SECTION IS MUCH ROUGHER AND LESS THOUGHT THROUGH THAN USUAL. TAKE IT WITH A BIG GRAIN OF SALT!
+
+Mathematics and computer science are important to me. They're important to me in a way that I think most people don't have a subject that is important to them. They're part of how I think and speak and communicate. The idea of having a partner who could share an appreciation of these things that are deeply important to me is really really appealing.
+
+Many people have tried to persuade me that this isn't the case, and I'm not very confident in my understanding of my feelings. However, several people that I've spoken to, both males and females, describe the same thing. The fact that 80% of female mathematicians marry other mathematicians (Gibbons, 1992) also greatly reinforces my confidence.
+
+My suspicion is that most people are attracted to others that are similar to them in some manner, though the specifics vary greatly. Some dimensions don't matter. In some cases, asymmetry helps. Define "mutual attractiveness" as:
+
+a(x,y) = 1/min(how attracted x is to y, how attracted y is to x)
+
+Then a(x,y) = 0 means both parties are infinitely attracted to each other.
+
+This doesn't form a metric structure. For example, most people aren't narcissists so a(x,x) = 0 infrequently holds. Similarly, since the majority of people are heterosexual, the triangle inequality frequently doesn't hold. On the other hand, I suspect that some sort of rectangle inequality is probably moderately true, especially if you consider averages over lots of middle points.
+
+I also suspect that if you mod out a few variables like gender, this probably becomes quite close to a metric space. Let a'(x,y) be this "modulo mutual attractiveness".
+
+Consider 
+
 
 Are Relationships a Good Idea?
 --------------------------------
@@ -102,8 +123,7 @@ But it isn't immediately clear to me that relationships are generally positive t
 
 * Many friends and people that I respect tell me of how greatly relationships improved their quality of life. Others describe it not having much impact after a few months of feeling amazing. A small number are extremely negative about it. But I don't think any of them are a terribly objective source.
 
-* J2- referred me to this really interesting LessWrong post, [How To Be Happy](http://lesswrong.com/lw/4su/how_to_be_happy/) "Factors that don't correlate much with happiness include: age,7 gender,8 parenthood,9 intelligence,10 physical attractiveness,11 and money12 (as long as you're above the poverty line). Factors that correlate moderately with happiness include: health,13 social activity,14 and religiosity.15 Factors that correlate strongly with happiness include: genetics,16 love and relationship satisfaction,17 and work satisfaction.18"
-
+* JK- referred me to this really interesting LessWrong post, [How To Be Happy](http://lesswrong.com/lw/4su/how_to_be_happy/), which reviews research into happiness: "Factors that don't correlate much with happiness include: age, gender, parenthood, intelligence, physical attractiveness, and money (as long as you're above the poverty line). Factors that correlate moderately with happiness include: health, social activity, and religiosity. Factors that correlate strongly with happiness include: genetics, love and relationship satisfaction, and work satisfaction."
 
 Productivity And Romance
 -------------------------
@@ -135,6 +155,31 @@ So, the question is, can there be a positive relationship between romance and pr
   * Seems like early research found negative correlations for male productivity with having an academic partner. It is speculated that this is because of a more egalitarian distribution of house work. It may be better modernly? (Also, I'd personally value that and would do that regarless of partner, so it doesn't matter much.)
   * (I should review further when not half-asleep)
 
+Removing One's Self From The Dating Pool
+-----------------------------------------
+
+I often wish I could just rid myself of romantic attraction (and attachment, etc). I often wish this, despite the fact that I'm generally persuaded that a romantic relationship (with a the right partner!) would make me much happier, and wouldn't obviously be bad for my productivity (it might even be good for it!). This is because:
+
+* I'm not very optimistic about my chances of finding the sort of relationship I want. (A lot of this has to do with asymmetries in my cluster of romance space -- see my interpretation of the space of individuals as a sort of metric space.) And I think a poor relationship would be much worse than none at all.
+
+* Removing myself would heal, slightly, some of the asymmetry.
+
+* Pursuing romance takes a lot of energy and involves high emotional risk.
+
+There are a few plausible options for achieving this, if I want to:
+
+* **Meditation & Self Control**: Being able to let go of emotions, remain detached, control what I'm focused on, etc... The most frustrating thing about romantic attraction has been an abnormally low ability to control my thoughts.
+
+* **Environment Hacks**:
+  * Multiple (redacted) men have described that interacting with women a lot (eg. by taking yoga) reduces romantic loneliness for them.
+
+* **Drugs**: I generally really dislike the idea of something modifying my cognition, but if I could legally acquire something with sufficiently compelling properties, I might consider it.
+  * Some of Fisher's papers suggest that seratonin is linked to the obsessive parts of romantic attraction and that SSRIs might help.
+  * (redacted)- was greatly helped by medication after finding the right psychiatrist.
+  * (redacted)- describes Aderal as reducing their need to have social interactions and increasing focus.
+
+* **Lobotomy**: It seems plausible that something could be done, and if I reviewed the literature I could probably come up with good guesses as to what. But it seems very very high risk and rather permanent...
+
 Signaling
 ----------
 
@@ -157,7 +202,7 @@ One important and complicated issues around romantic relationships is the initia
 * Disinterest and business are a signal for quality. Conversely, desperation is a really bad signal: seeming desperate for friends or partners is severely unattractive. Use common sense.
   * This really, really complicates things.
   * This seems on net negative.
-  * J- commented that some girls he knew would have rules like not accepting dates for Saturday any later than Wednesday, in order to emulate scarcity.
+  * JO- commented that some girls he knew would have rules like not accepting dates for Saturday any later than Wednesday, in order to emulate scarcity.
 
 * H- views this as an important skill (one of many) that one develops on low value relationships so that one is ready for a potentially very good relationship.
 
@@ -175,5 +220,26 @@ One important and complicated issues around romantic relationships is the initia
   * Write about this publicly, so that they'll know they need to be less subtle?
   * Provide public information (an OkCupid profile?) so that they can build a better model of you and be more confident that you are of interest to them and that they'd be of interest to you?
   * Make relationship status public (eg. for me on 05/30/2013, single, has never dated) so that potential partner doesn't have to worry about whether there might be an existing relationship?
+
+
+Altruistic Dating
+-----------------
+
+So far, we've mostly considered strategies for maximizing ones romantic success/happiness within ethical constraints (with varying degrees of rigor). But often that's not a very healthy way to look at things. For lots of things, it's useful to think about strategies that maximally help everyone else -- because we care about other people, because it can lead to new solutions, and because in some social circumstances (dating probably isn't one) altruistic behavior is rewarded. There are several interesting, specific problems, but first some general thoughts are in order:
+
+**Free/Efficient Market Perspective**: I'm sure many economists would tell me that I should optimize for my interests try to be the best partner I can be, and do nothing further. The "market" can analyze and find solutions I can't. 
+
+**Optimizing for the benefit of your (potential) partner**:
+
+* Give them as much information about you as possible to make a decision (in a non-creepy, non-ranting way). Possible mechanisms might be a public OkCupid profile, or being really clearly willing to answer (almost) any question.
+  * Counter argument: Providing a lot more information and being honest about flaws may just lead to you being rejected, even when you were the best person in the candidate pool, hurting the person you were honest about. People aren't rational, and things like romantic attraction are not conscious decision.
+
+
+* Introduce them to people you think might be good partners for them.
+  * Side benefit: if they still choose you in the end, having had more good alternative options, that bodes well for your future relationship (which means a lower risk of you being hurt in the long run).
+
+* Become a better (potential) partner yourself.
+  * Ideas: Communication skills (non violent communication, active listening?), physical attractiveness (work out, optimize dressing, hair cut, etc), domestic skills (especially for males, since it signals that you won't push domestic work onto your partner), cluster specific (eg. math skills).
+  * Side benefit: Someone is more likely to pick you, your relationship will likely be better. (If you're seeking a long term relationship like me, then that equates to your relationship having a better life expectancy.)
 
 
