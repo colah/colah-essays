@@ -176,7 +176,7 @@ There are a few plausible options for achieving this, if I want to:
 * **Drugs**: I generally really dislike the idea of something modifying my cognition, but if I could legally acquire something with sufficiently compelling properties, I might consider it.
   * Some of Fisher's papers suggest that seratonin is linked to the obsessive parts of romantic attraction and that SSRIs might help.
   * (redacted)- was greatly helped by medication after finding the right psychiatrist.
-  * (redacted)- describes Aderal as reducing their need to have social interactions and increasing focus.
+  * (redacted)- describes Adderall as reducing their need to have social interactions and increasing focus. On the other hand, Adderall often increases sex drive.
 
 * **Lobotomy**: It seems plausible that something could be done, and if I reviewed the literature I could probably come up with good guesses as to what. But it seems very very high risk and rather permanent...
 
