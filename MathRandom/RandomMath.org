@@ -1,0 +1,122 @@
+
+
+* Order Statistics
+
+What is the distribution of the maximum of $n$ random variables? What started out a utilitarian question in my exploration of some generalized versions of the secretary problem turns out to be quite a deep topic.
+
+[[file:sage0-distmax.png]]
+
+(Note that I have little background in probability and statistics. Please forgive (and inform me of, so I can fix!) errors of notation or language. Or general confusion on my part.)
+
+** Geometric Interpretation of Maximum
+
+Consider the cumulative density function $F_{\max(X_1,X_2)}(x) = P(\max(X_1,X_2) < x)$.  You can picture two coppies of the $X$ distrbution as forming sides of a square. $\max(X_1, X_2)$ is the inside.
+
+[[file:max_cdf_2.png]]
+
+More generally, $P(\max(X_1, x_2 ... X_n) \leq x)$ can be visualized as an $n$-cube and equal to $P(X \leq x)^n$. By differentiation we get the probability density function,
+
+$$f_{\max(X_1, X_2... X_n)}(x) = P(\max(X_1, X_2... X_n) = x) = n*P(X \leq x)^{n-1}P(X=x) = n*F(x)^nf(x)$$
+
+This can also be observed as a simple geometric fact, the probability being the expanding surface of the cube.
+
+** Combinatorial Interpretation of Maximum
+
+We may also observe that $P(\max(X_1, X_2... ~X_n) = x) = n * P(X\leq x)^{n-1}*P(X=x)$ in a nice combinatorial way.
+
+Given $n$ random variables $\{X_n\}$, we imagine them ordered $X_{(1)} \leq X_{(2)} \leq ... X_{(n)}$. (Note the notational difference between $X_i$ which is some arbitrary random varialbe and $X_{(i)}$ which is the one that turned out to be in position $i$ when we ordered them.)
+
+ There are $n$ possibilities for which random variable $X_i$ is the last one ($X_{(n)}$). The probability that $X_i$, which will be equal to the maximum, will be $x$ is $P(X = x)$. The probability that the other $n-1$ variables will be less than equal to $x$ is $P(X \leq x)^{n-1}$.
+
+The result follows.
+
+** Minimum
+
+The probability that $\min(X_1, X_2.. ~X_n) \leq x$ is the probability that $X_1, X_2...$ are not all greater than $x$.
+
+The probability that that a particular variable is greater than $x$ is the probability that it isn't less than or equal to it.
+
+Therefore, $P(\min(X_1, X_2... X_n) \leq x) = 1 - (1-P(X \leq x))^n$
+
+It this feels familiar to you, it's probably because it's just application of [[http://en.wikipedia.org/wiki/De_Morgan%27s_laws][De Morgan's law]], equivelant to how A OR B is the same as NOT ((NOT A) AND (NOT B)).
+
+You can also interpret this geometrically, similarly to how we interpreted maximum.
+
+From here, differentiate to get probability density.
+
+** Combinatorial Construction of Order Statistics
+
+Suppose we have a number of random variables, $\{X_n\}$ from the same distribution. We want to know the distribution to expect from the random variable in a particular position after we order them, $X_{(1)} < X_{(2)} < X_{(3)} < ... X_{(n)}$, the [[http://mathworld.wolfram.com/OrderStatistic.html][order statistics]]. Let's consider the distribution to expect of a variable $X_{(a,b)}$ which has $a$ variables less than (or equal to) it and $b$ variables greater than (or equal to) it.
+
+The number of ways to select $a$ elements for the less than set, $1$ for the actual element, and $b$ for the greater than from $a+b+1$ elements is $\binom{a+1+b}{a,1,b} = \frac{(a+1+b)!}{a!1!b!}$. Then, the probability distribution of $X_{(a,b)}$ is
+
+$$P(X_{(a,b)} = x) = \binom{a+b+1}{a,b,1} * P(X \leq x)^a * P(X \geq x)^b * P(X = x)$$
+
+$$f_{a,b}(x) = \binom{a+b+1}{a,b,1} * F(x)^a * (1-F(x))^b * f(x)$$
+
+It's a little bit less elegant, but the usual way to think of this is as $X_{(a+1)}$, the $(a+1)$-th order statistic of $a+1+b$ random variables. Or more so, as the $i$-th order statistic of $n$ random variables.
+
+$$f_{X_{(i)}}(x) = i\binom{n}{i}F(x)^{i-1}(1-F(x))^{n-i}f(x)$$
+
+(This is my first writing done in emacs org mode + LaTeX and wordpress integration. Thanks to [[http://sachachua.com][Sacha Chua]] for help! This is awesome.) 
+
+* Secretary Problem
+
+** Random Normal Variables
+
+We use [[https://en.wikipedia.org/wiki/Dynamic_programming][dyanmic programing]] and order statistics to analyze the optimal strategy when there are $N$ candidates.
+
+*** Model
+
+Let $V(n, r)$, where $n \in \mathbb{Z}_N$ and $r \in \mathbb{Z}_n$, be our expected outcome if we follow the *optimal policy* given that we are in the state of having observed $n$ candidates and our present candidate is ranked $r$ amongst the observed candidates (ie. there are $r$ observed candidates worse than the present one).
+
+In the final stage, we must accept the candidate we get, so our expected outomce is 
+
+$$V(N, r) = E(X_{(r < N)})$$
+
+where $X_{(r < N)}$ is the $r$-th order statistics of $N$ random variables.
+
+On the other hand, if we aren't in the final state, we get to make a choice between the expected value of the present candidate, $E_p = E(X_{(r<n)})$, and our expected future value, the average of possible next states, $E_f = \frac{1}{n+1} \sum_{r\in\mathbb{Z}_{n+1}} E(n+1,r)$. As such,
+
+$$V(n,r) = \max(E_p, E_f)$$
+
+$$V(n, r) = \max(E(X_{(r<n)}), ~ \frac{1}{n+1} \sum_{r\in\mathbb{Z}_{n+1}} E(n+1,r))$$
+
+*** Modeled results of $V(n,r)$
+
+It's easy enough to calculate $V(n,r)$'s values with a computer, even if a closed form is not immediatly obvious.
+
+The results for $20$ candidates:
+
+[[file:v_table_20.png]]
+
+(The uniform grey triangle in the bottom right half, is invalid states.)
+
+The results for 400 candidates:
+
+[[file:v_table_400.png]]
+
+*** Present/future trade off choice
+
+When is it rational to stop with the present candidate, and when does it make sense to chose the future expected value?
+
+For 20 candidates, here are the states it makes sense to stop -- white means it is rational to stop, black means it isn't, grey means an invalid state.
+
+[[file:c_table_20.png]]
+
+For 400 candidates:
+
+[[file:c_table_400.png]]
+
+*** Optimal Strategy Expected Outcomes ($V(0,0)$)
+
+With $N$ candidates, what is the intial expected outcome (if we follow the optimal startegy)?
+
+[[file:v_table_nE.png]]
+
+*** Mandatory Skip
+
+[[file:optimal_100.png]]
+
+
+
